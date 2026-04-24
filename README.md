@@ -26,7 +26,7 @@ Anyone who:
 2. Select **Server-to-Server OAuth App**.
 3. Enter an app name such as **Export Join Links**.
 4. Under **Information**, enter a contact name, contact email and organization name (you can't activate the App otherwise).
-5. Under **App Credentials***, copy your **Account ID**, **Client ID**, and **Client Secret** somewhere safe.
+5. Under **App Credentials**, copy your **Account ID**, **Client ID**, and **Client Secret** somewhere safe.
 > ⚠️ Never share these credentials! Anyone who has them can use them to access your Zoom account.
 6. Under **Scopes**, select **Add Scopes** and add the scope: `meeting:read:list_registrants:admin`. No other scopes are required.
 7. Under **Activation**, select **Activate your app**.
