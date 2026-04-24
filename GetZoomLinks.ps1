@@ -20,8 +20,12 @@ function Test-SecretsFileExists {
 }
 
 
-
 function Test-CredentialsObject {
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        'PSAvoidUsingPlainTextForPassword',
+        'Credentials',
+        Justification = 'Parameter is a hashtable of credential fields, not a plain-text password string.'
+    )]
     param($Credentials)
 
     if ($null -eq $Credentials) { return $false }
@@ -42,7 +46,7 @@ function Test-CredentialsObject {
 
 
 
-function Load-Credentials {
+function Import-Credentials {
     param([string]$FilePath)
 
     try {
@@ -96,7 +100,7 @@ function Save-Credentials {
 
 
 
-function Prompt-ForCredentials {
+function Request-ForCredentials {
     Write-Host ""
     Write-Host "=== Zoom Credentials Setup ===" -ForegroundColor Cyan
     Write-Host "Please enter your Zoom API credentials:"
@@ -120,7 +124,7 @@ function Prompt-ForCredentials {
 
 
 
-function Prompt-ForMeetingId {
+function Request-ForMeetingId {
     $meetingId = Read-Host "Enter Meeting ID"
     return $meetingId
 }
